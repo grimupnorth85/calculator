@@ -62,27 +62,24 @@ return (
   <h1>my simple calculator</h1>
   <div id ="screen"> {display} {calc.sign}</div>
 
-<div id="visibleButtons">
-<div>
-  {numberButtons.map(number => (
-    <button key={number} onClick={() => handleClickNumber(number)}>
-      {number}
-    </button>
-  ))}
-</div>
-
-<div>
-  {operatorButtons.map(operator => (
-    <button key={operator} onClick={() => handleClickOperation(operator)}>
-      {operator}
+  <div id="visibleButtons">
+    {[...numberButtons, ...operatorButtons, '=', 'C'].map((item, index) => (
+      <button
+        key={index}
+        onClick={() => 
+          typeof item === 'number' 
+            ? handleClickNumber(item) 
+            : item === '=' 
+              ? handleEquals() 
+              : item === 'C' 
+                ? handleClear() 
+                : handleClickOperation(item)
+        }
+      >
+        {item}
       </button>
-  ))}
-</div>
-
-<button onClick={handleEquals}>=</button>
-
-<button onClick={handleClear}>C</button>
-</div>
+    ))}
+  </div>
 </div>
 )
 }
