@@ -13,6 +13,14 @@
   background-color: grey;
 }
 
+#container h1 {
+  padding: 1rem;
+  font-family: "Orbitron";
+  font-size: 2.5rem;
+  color: green;
+  text-shadow: 0 2px 2px greenyellow;
+}
+
 #screen {
   display: flex;
   justify-content: center;

@@ -59,7 +59,7 @@ const display = calc.num || calc.res
 return (
 
 <div id="container">
-  <h1>my simple calculator</h1>
+  <h1><strong>my simple calculator</strong></h1>
   <div id ="screen"> {display} {calc.sign}</div>
 
   <div id="visibleButtons">
